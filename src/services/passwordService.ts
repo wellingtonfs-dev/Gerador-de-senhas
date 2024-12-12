@@ -1,8 +1,7 @@
-export default function generatePass(){
+export default function generatePass(passwordLength: number){
     let password: string = ''
-    let characters:string = 'Aa@#$%^&*()1234567890abcdefghijklmnopqrstu!ABCDEFGHIJKLMNOPQRSTUV'
-    let passwordLength = 8
-
+    let characters:string = 'ABCCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz!@#$%^&*()'
+    
     for(let i=0; i < passwordLength; i++){
         password += characters.charAt(Math.floor(Math.random()*characters.length))
     }

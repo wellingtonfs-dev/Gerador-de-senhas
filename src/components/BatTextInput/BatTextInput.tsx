@@ -8,7 +8,9 @@ interface BatTextInputProps{
 }
 
 export function BatTextInput(props: BatTextInputProps) {
-  return (    
-        <TextInput style={styles.inputer} placeholder='pass' value={props.pass}/>
+  return (  
+    <>    
+      <TextInput style={styles.inputer} placeholder='pass' value={props.pass}/>
+    </>  
   );
 }
