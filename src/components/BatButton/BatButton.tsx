@@ -8,10 +8,10 @@ import { LengthPass } from "../LengthPass/LengthPass";
 
 export function BatButton() {
   const [pass, setPass] = useState("");
-  
+  const [passwordLength, setPasswordLength] = useState(8); 
 
   function handleGenerateButton() {
-    const generatedPassword = generatePass();
+    const generatedPassword = generatePass(passwordLength); 
     setPass(generatedPassword);
   }
 
@@ -19,14 +19,17 @@ export function BatButton() {
     Clipboard.setStringAsync(pass);
     alert("Copiado!");
   }
+
   return (
     <>
-      <LengthPass />
+      <LengthPass 
+        passwordLength={passwordLength} 
+        setPasswordLength={setPasswordLength} 
+      />
       <BatTextInput pass={pass} />
       <Pressable onPress={handleGenerateButton} style={styles.button}>
         <Text style={styles.text}>GENERATE</Text>
       </Pressable>
-
       <Pressable onPress={handleCopyButton} style={styles.button}>
         <Text style={styles.text}>⚡ COPY</Text>
       </Pressable>
